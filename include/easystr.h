@@ -29,6 +29,9 @@ unsigned int e_contains_str(EStr s, char* v);
 unsigned int e_contains_char(EStr s, char c);
 
 EStr* e_concat(EStr* a, EStr b);
+EStr* e_concat_char(EStr* a, char c);
+
+char* e_chartostr(char c);
 
 void e_free(EStr* s);
 #endif

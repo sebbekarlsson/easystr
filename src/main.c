@@ -13,6 +13,10 @@ int main(int argc, char* argv[]) {
   printf("%d\n", e_contains_str(*str, "John"));
   printf("%d\n", e_contains_char(*str, 'H'));
 
+  str = e_concat_char(str, 'X');
+
+  printf("%s\n", str->value);
+
   e_free(str);
 
   return 0;

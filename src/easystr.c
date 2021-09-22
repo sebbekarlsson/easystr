@@ -85,6 +85,22 @@ EStr* e_concat(EStr* a, EStr b) {
   return a;
 }
 
+char* e_chartostr(char c) {
+  char* v = (char*)calloc(2, sizeof(char));
+  v[0] = c;
+  v[1] = '\0';
+
+  return v;
+}
+
+EStr* e_concat_char(EStr* a, char c) {
+  char* ss = e_chartostr(c);
+  e_concat(a, ESTR(ss));
+  free(ss);
+
+  return a;
+}
+
 void e_free(EStr* s) {
   if (s->value) free(s->value);
   free(s);
