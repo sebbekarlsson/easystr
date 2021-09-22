@@ -94,6 +94,10 @@ char* e_chartostr(char c) {
 }
 
 EStr* e_concat_char(EStr* a, char c) {
+  if (!c) {
+    printf("Warning: e_concat_char: c is zero.\n");
+    return a;
+  }
   char* ss = e_chartostr(c);
   e_concat(a, ESTR(ss));
   free(ss);
