@@ -21,9 +21,8 @@ EStr* e_fromchar(char c) {
 
 EStr* e_fromstr(char* val) {
   EStr* e = e_init();
-  if (!val) return e;
-  e->value = strdup(val);
-  e->length = strlen(val);
+  e->value = val != 0 ? strdup(val) : 0;
+  e->length = val != 0 ? strlen(val) : 0;
 
   return e;
 }
