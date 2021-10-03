@@ -110,7 +110,6 @@ EStr* e_concat_str(EStr* a, char* ss) {
     return a;
   }
   e_concat(a, ESTR(ss));
-  free(ss);
 
   return a;
 }
