@@ -104,6 +104,17 @@ EStr* e_concat_char(EStr* a, char c) {
   return a;
 }
 
+EStr* e_concat_str(EStr* a, char* ss) {
+  if (!ss) {
+    printf("Warning: e_concat_str: ss is zero.\n");
+    return a;
+  }
+  e_concat(a, ESTR(ss));
+  free(ss);
+
+  return a;
+}
+
 void e_free(EStr* s) {
   if (s->value) free(s->value);
   free(s);
